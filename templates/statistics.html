@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+
+  <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+	<div class="container">
+  <a class="navbar-brand" ><img src="/static/logo.png" alt="" width="160px" height="40px" style="padding-top: 7px;" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="test.html">Test </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link active" href="statistics.html">Statistics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="detect.html">Find-Fraud</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="aboutus.html">AboutUs</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="container-fluid">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Analysis</h1>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total No Of Frauds</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">19151</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">No of unbundlings</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">18476</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">No of false Billings</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">675</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Efficiency</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">83.75%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+         
+          <div class="row">
+            <div class="col-xl-5 col-lg-6" style="margin-left: 100px;">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Men vs Women percentage</h6>
+                  
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart" style="width: 350px;"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary">Women</i> 
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success">Men</i> 
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-5 col-lg-6" >
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">November 2008 - January 2010</h6>
+                  
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <canvas id="lineChart" class="auto-mx" style="max-width: 500px;"></canvas>
+                </div>
+              </div>
+</div>
+
+
+
+           
+
+</div>
+<div class="row">
+<div class="col-xl-5 col-lg-6" style="margin-left: 105px;">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Age wise statistics</h6>
+                  
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <canvas id="myChart" class="auto-mx" style="max-width: 500px;"></canvas>
+
+                </div>
+              </div>
+</div>
+
+<div class="col-xl-5 col-lg-6" >
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Fraud vs Non Fraud</h6>
+                  
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <canvas id="pieChart" style="max-width: 500px"></canvas>
+                </div>
+              </div>
+    
+</div>
+<script>
+  var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ["21-40", "41-60", "61-80", "81-100"],
+datasets: [{
+label: '',
+data: [0, 3654, 14045, 82285, 38471],
+backgroundColor: [
+'rgb(28, 200, 138)',
+'rgb(90,92,105)',
+'rgb(54,185,204)',
+'rgb(133, 135, 150)',
+'rgb(194, 134,95)',
+],
+borderColor: [
+'rgb(28, 200, 138)',
+'rgb(90,92,105)',
+'rgb(54,185,204)',
+'rgb(133, 135, 150)',
+'rgb(194, 134,95)',
+],
+borderWidth: 1
+}]
+},
+options : {
+    scales: {
+        xAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            },
+            ticks: {
+                beginAtZero: true
+            }   
+        }]
+    }
+}
+});
+
+</script>
+<script>
+//line
+var ctxL = document.getElementById("lineChart").getContext('2d');
+var myLineChart = new Chart(ctxL, {
+type: 'line',
+data: {
+labels: ['November 2008', 'December 2008', "January 2009", "February 2009", "March 2009", "April 2009", "May 2009", "June 2009", "July 2009", 'August 2009', 'September 2009', 'October 2009', 'November 2009', 'December 2009', 'January 2010'],
+datasets: [{
+label: "Unbundling",
+data: [1, 157, 1884, 1882, 1814, 1707, 1690, 1561, 1423, 1399, 1403, 1219, 1159, 1046, 131, 0],
+backgroundColor: [
+'rgba(105, 0, 132, .2)',
+],
+borderColor: [
+'rgba(200, 99, 132, .7)',
+],
+borderWidth: 2
+},
+{
+label: "False Billing",
+data: [0, 2, 16, 15, 23, 31, 42, 56, 51, 64, 88, 88, 94, 93, 12, 0],
+backgroundColor: [
+'rgba(0, 137, 132, .2)',
+],
+borderColor: [
+'rgba(0, 10, 130, .7)',
+],
+borderWidth: 2
+}
+]
+},
+options: {
+responsive: true,
+    scales: {
+        xAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            },
+            ticks: {
+                beginAtZero: true
+            }   
+        }]
+    }
+}
+});
+</script>
+
+<script >
+  //pie
+var ctxP = document.getElementById("pieChart").getContext('2d');
+var myPieChart = new Chart(ctxP, {
+type: 'pie',
+data: {
+labels: ["Fraud Claim", "Legit claim"],
+datasets: [{
+data: [18476+675, 558211-18476+675],
+backgroundColor: ["#F7464A", "#46BFBD"],
+hoverBackgroundColor: ["#FF5A5E", "#5AD3D1"]
+}]
+},
+options: {
+responsive: true
+}
+});
+</script>
+<script src="/static/chart-pie-demo2.js"></script>
+<script src="/static/chart-pie-demo1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

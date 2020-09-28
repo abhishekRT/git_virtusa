@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/test1.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+	<div class="container">
+  <a class="navbar-brand"><img src="/static/logo.png" alt="" width="160px" height="40px" style="padding-top: 7px;" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link active" href="test.html">Test </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="statistics.html">Statistics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="detect.html">Find-Fraud</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="aboutus.html">AboutUs</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+<div>
+  <h1></h1>
+</div>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800 " style="margin-left: 12%;">Test-Data</h1>
+            <h1 class="h3 mb-0 text-gray-800 " style="margin-right: 12%; font-size: large; margin-top: 1%;">In-Patient</h1>
+            <h1 class="h3 mb-0 text-gray-800 " style="margin-right: 18%; font-size: large; margin-top: 1%;">Out-Patient</h1>
+</div>
+
+
+<div class="container"></div>
+<div class="row">
+  <div class="column" style="margin-left: 2%;width: 17%;">
+    <div class="card">
+      <div class="scrollable">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Provider ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in b %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{i.Provider}}</td>
+    </tr>
+    {% endfor %}
+   
+  </tbody>
+</table>
+</div>
+    </div>
+  </div>
+
+  <div class="column" style="width: 40%;">
+    <div class="card">
+      <div class="scrollable">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Beneficiary ID</th>
+      <th scope="col">Claim ID</th>
+      <th scope="col">Provider ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for j in i %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{j.BeneID}}</td>
+      <td>{{j.ClaimID}}</td>
+      <td>{{j.Provider}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+    </div>
+  </div>
+  
+  <div class="column" style="width: 40%;">
+    <div class="card">
+      <div class="scrollable">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Beneficiary ID</th>
+      <th scope="col">Claim ID</th>
+      <th scope="col">Provider ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in o %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{i.BeneID}}</td>
+      <td>{{i.ClaimID}}</td>
+      <td>{{i.Provider}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+    </div>
+  </div>
+</div>
+<div>
+  <h1></h1>
+</div>
+<div>
+  <h1></h1>
+</div>
+<div>
+  <h1></h1>
+</div>
+<div class="container bg-light">
+        <div class="col-md-12 text-center">
+        </div>
+</div>
+<div id="myDIV" style="display:none;">
+<div>
+  <h1></h1>
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Hi -10</li>
+    <li class="list-group-item">Hello-20</li>
+    <li class="list-group-item"></li>
+  </ul> 
+</div>
+<script>
+function myfun() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<script src="/static/chart-pie-demo1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
